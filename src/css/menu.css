@@ -1,0 +1,9 @@
+.menu {
+  position: absolute;
+  width: 350px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background:rgba(110, 110, 110, 0.25);
+  padding-left: 2rem;
+}
