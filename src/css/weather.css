@@ -31,6 +31,7 @@
   padding-top: 1rem;
   width: fit-content;
 }
+.info-panel .info-grid .icon img{ padding-left: .5rem;}
 
 .info-panel .info-grid .time {
   color: #fff;

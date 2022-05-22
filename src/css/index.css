@@ -14,6 +14,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    overflow: scroll;
 
 }
 .app{
@@ -21,7 +22,49 @@ body{
     grid-template-areas: 
     "timetable menu"
     "city menu";
-    grid-template-rows: 50% 50%;
-   
-   
+    grid-template-rows: 50% 50%;   
+    
+    
+}
+@media screen and (max-width:480px) {
+    
+    .app{
+        grid-template-areas: 
+        "menu"
+        "city"
+        "timetable";
+        grid-template-rows: auto; 
+        width: 100vw;
+        overflow: hidden;
+    }
+    .menu{
+        height: fit-content;
+        padding-bottom: 2rem;
+        width: 100vw;
+    }
+    .info-panel{
+        padding: 0;
+        margin: 0;
+        flex-direction: column;
+        width: 100vw;
+        margin-bottom: 1rem;
+        
+    }
+    
+    .timetable{
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        overflow-x: scroll;
+        padding-bottom: 1rem;
+        
+    }
+    .info-grid div{
+        width: fit-content;
+        margin: auto;
+    }
+    .city{
+        margin: 0!important;
+    }
+    .table{margin: 1rem;}
 }
