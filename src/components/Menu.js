@@ -5,13 +5,17 @@ import "../css/menu.css";
 import "../css/weather-details.css";
 import Axios from "../axios/Axios";
 import WeatherDetails from "./WeatherDetails";
-import Weather from "./Weather";
+
 
 class Menu extends Component {
   state = {
     cities: ["New York", "Paris", "Tokyo", "California"],
     selected: {},
   };
+
+  componentDidMount(){
+    this.getCity('Budapest');
+  }
 
   renderCities = () => {
     return this.state.cities.map((city) => {
@@ -38,12 +42,14 @@ class Menu extends Component {
   getCity = (city) => {
     let axios = new Axios();
     let api =
-      "http://api.weatherapi.com/v1/current.json?key=9476f0547d5f4cb7afd84550222105&q=" +
-      city;
+    "http://api.weatherapi.com/v1/forecast.json?key=9476f0547d5f4cb7afd84550222105&q="+city+"&days=1&aqi=no&alerts=no";
     axios.get(api, (city) => {
       this.setState({ selected: city.data });
       this.props.info(city.data)
     });
+
+    
+
   };
 
   render() {

@@ -20,23 +20,22 @@ class SearchBar extends Component {
   onSearch = (e)=>{
       let value = e.target.value;
       this.state.city = value;
-      
   }
 
-  fetchCitySearch = ()=>{
-      let {city} = this.state;
-      let api = "http://api.weatherapi.com/v1/current.json?key=9476f0547d5f4cb7afd84550222105&q="+city+"&aqi=no";
-      this.axios.get(api,(city)=>{
-          this.setState({location:city.data});
-      })
+  onKey = (e) =>{
+    if(e.key =='Enter') {
+      this.props.getCity(this.state.city);
+      e.target.value = '';
+    }
   }
 
+ 
 
   
   render() { 
     return ( 
       <div className='searchbar'>
-        <input type={"search"} id={"city-search"} ref={this.search} placeholder={"Search..."} onChange={(e)=>{this.onSearch(e)}}/>
+        <input type={"search"} id={"city-search"} ref={this.search} placeholder={"Search..."} onKeyDown={(e)=>{this.onKey(e)}} onChange={(e)=>{this.onSearch(e)}}/>
         <button onClick={()=>{this.props.getCity(this.state.city)}}><HiOutlineSearch className='search-icon'></HiOutlineSearch></button>
       </div>
      );
