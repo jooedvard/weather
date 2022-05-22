@@ -67,4 +67,7 @@ body{
         margin: 0!important;
     }
     .table{margin: 1rem;}
+    .table{
+        height: 80%;
+    }
 }
