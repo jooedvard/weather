@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Menu from "./Menu";
-import Background from "./Background";
 import Weather from "./Weather";
 import Timetable from "./Timetable";
-
+import '../css/index.css';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -52,10 +51,10 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Menu info={this.getInfo} />
         <Timetable forecast={this.state.days}></Timetable>
-        <Background />
+
         <Weather
           celsius={this.state.celsius}
           city={this.state.city}

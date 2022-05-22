@@ -1,9 +1,7 @@
 .menu {
-  position: absolute;
+  grid-area: menu;
   width: 350px;
-  height: 100%;
-  top: 0;
-  right: 0;
+  height: 100vh;
   background:rgba(110, 110, 110, 0.25);
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
