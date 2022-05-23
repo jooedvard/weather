@@ -5,7 +5,7 @@ import {WiRaindrop,WiSnowflakeCold} from 'react-icons/wi';
 class Table extends Component {
   constructor(props) {
     super(props);
-    console.log(this);
+   
     let temp = this.props.day.time.split(" ");
     let date, clock;
     date = temp[0];

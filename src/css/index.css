@@ -1,73 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
-html,body{
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Rubik', sans-serif;
-
-    
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap");
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Rubik", sans-serif;
 }
-body{
-    width: 100vw;
-    height: 100vh;
-    background:url('/public/images/night.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    overflow: scroll;
-
+.table {
+  height: 80%;
 }
-.app{
-    display: grid;
-    grid-template-areas: 
+
+body {
+  width: 100vw;
+  height: 100vh;
+ background-image: url('../images/night.jpg');
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  box-sizing: content-box;
+  padding-right: 17px;
+  padding-bottom: 17px;
+}
+.app {
+  display: grid;
+  grid-template-areas:
     "timetable menu"
     "city menu";
-    grid-template-rows: 50% 50%;   
-    
-    
+  grid-template-rows: 50% 50%;
 }
-@media screen and (max-width:480px) {
-    
-    .app{
-        grid-template-areas: 
-        "menu"
-        "city"
-        "timetable";
-        grid-template-rows: auto; 
-        width: 100vw;
-        overflow: hidden;
-    }
-    .menu{
-        height: fit-content;
-        padding-bottom: 2rem;
-        width: 100vw;
-    }
-    .info-panel{
-        padding: 0;
-        margin: 0;
-        flex-direction: column;
-        width: 100vw;
-        margin-bottom: 1rem;
-        
-    }
-    
-    .timetable{
-        width: 100vw;
-        padding: 0;
-        margin: 0;
-        overflow-x: scroll;
-        padding-bottom: 1rem;
-        
-    }
-    .info-grid div{
-        width: fit-content;
-        margin: auto;
-    }
-    .city{
-        margin: 0!important;
-    }
-    .table{margin: 1rem;}
-    .table{
-        height: 80%;
-    }
+@media screen and (max-width: 768px) {
+  body {
+    overflow-y: scroll;
+  }
+
+  .app {
+    grid-template-areas:
+      "menu"
+      "city"
+      "timetable";
+    grid-template-rows: auto;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .menu {
+    height: fit-content;
+    padding-bottom: 2rem;
+    width: 100vw;
+  }
+  .info-panel {
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    width: 100vw;
+    margin-bottom: 1rem;
+  }
+
+  .timetable {
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+  }
+  .info-grid div {
+    width: fit-content;
+    margin: auto;
+  }
+  .city {
+    margin: 0 !important;
+  }
+  .table {
+    margin: 1rem;
+  }
+  .table {
+    height: 80%;
+  }
 }

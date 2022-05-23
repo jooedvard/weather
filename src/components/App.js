@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import Menu from "./Menu";
 import Weather from "./Weather";
 import Timetable from "./Timetable";
-import '../css/index.css';
+import "../css/index.css";
+
+
 class App extends Component {
   constructor(props) {
     super(props);
+   
   }
 
   state = {
@@ -14,14 +17,18 @@ class App extends Component {
     icon: "",
     time: "",
     weatherType: "",
-    days : []
+    days: [],
   };
+
+ 
+ 
 
   getInfo = (info) => {
     let temp = info.location.localtime.split(" ");
     let date, clock;
     date = temp[0];
     clock = temp[1];
+    
     let forecastDays = [];
 
     info.forecast.forecastday[0].hour.map((day, index) => {
@@ -32,7 +39,7 @@ class App extends Component {
         data.temp_c = day.temp_c;
         data.condition = day.condition;
         data.time = day.time;
-        forecastDays.push(data)
+        forecastDays.push(data);
       }
     });
 
@@ -43,15 +50,14 @@ class App extends Component {
       date: date,
       clock: clock,
       weatherType: info.current.condition.text,
-      days : forecastDays 
+      days: forecastDays,
     });
-
-    
   };
 
   render() {
     return (
       <div className="app">
+
         <Menu info={this.getInfo} />
         <Timetable forecast={this.state.days}></Timetable>
 
